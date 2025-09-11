@@ -1,14 +1,9 @@
-import Image from "next/image";
-import Section from "./Testing/Section_2";
-
-
-export default function Home() {
+// app/page.js
+export default function HomePage() {
   return (
-    
     <div>
-      <Section/>
-   
-
+      <h1>Welcome Home</h1>
+      <p>This is the main content area.</p>
     </div>
   );
 }
