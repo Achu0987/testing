@@ -4,6 +4,7 @@ import { useEffect } from "react";
 
 
 import V9 from "./V9";
+import V10 from "./V10";
 
 
 
@@ -22,10 +23,12 @@ export default function Page() {
     <div>
       <div id="V9" style={{ padding: "50px 0" ,textAlign:'center'}}>
         <label>Section_1 - V9</label>
-        <V9 />
-        
-       
-        
+        <V9 /> 
+      </div>
+
+      <div id="V10" style={{ padding: "50px 0" ,textAlign:'center'}}>
+        <label>Section_1 - V10</label>
+        <V10/>
       </div>
       
          
