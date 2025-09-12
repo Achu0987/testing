@@ -10,15 +10,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body  className='overflow-y-auto' style={{overflowX:'hidden'}}>
-        <div  className='sticky top-0'>
-          <div className='sticky top-0 z-999'>
+      <body>
           <Sidebar />
-          </div>
           <main >
             {children}
           </main>
-        </div>
       </body>
     </html>
   );
