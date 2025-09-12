@@ -1,15 +1,16 @@
-"use client";
-
-import { useEffect } from "react";
-
+"use client"
+import Image from "next/image";
+import React,{useEffect,useState} from "react";
 
 import V9 from "./V9";
 import V10 from "./V10";
+import V13 from "./V13";
 
 
 
-export default function Page() {
-  useEffect(() => {
+export default function Section_2() {
+  const titleText = "Moon Light";
+useEffect(() => {
     if (typeof window !== "undefined" && window.location.hash) {
       const id = window.location.hash.replace("#", "");
       const el = document.getElementById(id);
@@ -18,21 +19,24 @@ export default function Page() {
       }
     }
   }, []);
-
   return (
-    <div>
-      <div id="V9" style={{ padding: "50px 0" ,textAlign:'center'}}>
-        <label>Section_1 - V9</label>
-        <V9 /> 
+    <div id="section1-container">
+     <div id="V9" style={{ padding: "50px 0" ,textAlign:'center',fontWeight:'bold'}}>
+        <label>Section_2 - V9</label>
+      <V9 />
       </div>
-
-      <div id="V10" style={{ padding: "50px 0" ,textAlign:'center'}}>
-        <label>Section_1 - V10</label>
-        <V10/>
+        <div id="V10" style={{ padding: "50px 0" ,textAlign:'center',fontWeight:'bold'}}>
+        <label>Section_2 - V10</label>
+        <br></br>
+         <br></br>
+      <V10/>
       </div>
-      
-         
+            <div id="V13" style={{ padding: "50px 0" ,textAlign:'center',fontWeight:'bold'}}>
+        <label>Section_2 - V13</label>
+        <br></br>
+         <br></br>
+      <V13/>
       </div>
-    
+    </div>
   );
 }
