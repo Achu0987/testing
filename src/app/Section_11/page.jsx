@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React,{useEffect,useState} from "react";
 
-import V18 from "./V18";
+
 import V22 from "../Section_11/V22";
 
 
@@ -45,10 +45,7 @@ const [isMobile, setIsMobile] = useState(false);
 
   return (
     <div id="section1-container">
-     <div id="V18" >
-        
-     <V18/>
-      </div>
+     
       <div id="V22" >
         
      <V22 />

@@ -12,6 +12,8 @@ const MENU = [
     submenu: [
       { label: 'Section 1', href: '/Section_1' },
       { label: 'Section 10', href: '/Section_10' },
+      { label: 'Section 11', href: '/Section_11' },
+
     
     ],
   },
