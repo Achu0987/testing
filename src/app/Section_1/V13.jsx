@@ -62,7 +62,7 @@ function FeatureCard({ item, index, onActivate, cardRefCallback }) {
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}
       onMouseEnter={() => onActivate(index)}
-      className="group relative p-[2.5px] rounded-2xl transition-transform duration-200 transform-gpu"
+      className="group relative p-[2.5px] rounded-2xl transition-transform duration-200 transform-gpu h-full"
     >
       <div className="absolute inset-0 rounded-2xl pointer-events-none overflow-hidden">
         <div className="absolute -inset-0.5 w-[calc(100%+4px)] h-[calc(100%+4px)] left-[-2px] top-[-2px] rounded-2xl blur-[16px] opacity-85">
@@ -100,8 +100,6 @@ function FeatureCard({ item, index, onActivate, cardRefCallback }) {
             </svg>
           </button>
         </div>
-
-        <div className="absolute top-3 right-3 w-9 h-9 rounded-md pointer-events-none transform transition-opacity duration-300 opacity-30 bg-gradient-to-tr from-indigo-100/70 to-cyan-100/60" />
       </article>
     </div>
   );
@@ -162,7 +160,7 @@ export default function V13() {
     let bgPos = 0;
 
     function loop() {
-      wobbleOffset.current += 0.08; // controls wobble speed
+      wobbleOffset.current += 0.08;
 
       followers.current.forEach((p, i) => {
         const sp = [0.18, 0.12, 0.08][i];
@@ -173,7 +171,6 @@ export default function V13() {
         if (el) el.style.opacity = `${0.95 - i*0.28}`;
       });
 
-      // border interpolation + wobble
       const b = borderState.current;
       b.x += (b.tx - b.x) * 0.12;
       b.y += (b.ty - b.y) * 0.12;
@@ -181,8 +178,8 @@ export default function V13() {
       b.h += (b.th - b.h) * 0.12;
       if (activeBorderRef.current) {
         const border = activeBorderRef.current;
-        const wobbleX = Math.sin(wobbleOffset.current) * 3; // ±3px wobble
-        const wobbleY = Math.cos(wobbleOffset.current) * 2; // ±2px wobble
+        const wobbleX = Math.sin(wobbleOffset.current) * 3;
+        const wobbleY = Math.cos(wobbleOffset.current) * 2;
         border.style.left = `${b.x + wobbleX}px`;
         border.style.top = `${b.y + wobbleY}px`;
         border.style.width = `${b.w}px`;
@@ -231,7 +228,7 @@ export default function V13() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch relative z-10">
             {cards.map((c, i) => (
-              <div key={i} className="z-10">
+              <div key={i} className="z-10 h-full">
                 <FeatureCard
                   item={c}
                   index={i}

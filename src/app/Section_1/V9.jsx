@@ -2,7 +2,7 @@
 
 export default function V9() {
   return (
-    <section className="w-full py-16 bg-white px-6 items-center justify-center mx-20 text-left flex flex-col gap-20 " id="3">
+    <section className="w-full py-16 bg-white px-6 items-center justify-center  text-left flex flex-col gap-20 " id="3">
       <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
         
         {/* Card 1 */}

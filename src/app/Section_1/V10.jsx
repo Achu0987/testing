@@ -37,7 +37,7 @@ export default function V9() {
   return (
     <section
       id="3"
-      className="w-full py-16 px-6 bg-white flex flex-col items-center text-left mx-20"
+      className="w-full py-16 px-6 bg-white flex flex-col items-center text-left "
     >
       <div className="max-w-6xl w-full mx-auto">
         <header className="mb-8 text-center md:text-left">

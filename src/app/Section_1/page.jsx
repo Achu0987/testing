@@ -6,6 +6,8 @@ import V9 from "./V9";
 import V10 from "./V10";
 import V13 from "./V13";
 
+import V45 from "./ht";
+
 
 
 export default function Section_2() {
@@ -36,6 +38,9 @@ useEffect(() => {
         <br></br>
          <br></br>
       <V13/>
+     <V45/>
+    
+
       </div>
     </div>
   );
