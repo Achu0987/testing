@@ -3,7 +3,8 @@ import Image from "next/image";
 import React,{useEffect,useState} from "react";
 
 
-import V22 from "../Section_11/V22";
+// import V22 from "../Section_11/V22";
+import V35 from "./V35";
 
 
 export default function Section_10() {
@@ -46,10 +47,17 @@ const [isMobile, setIsMobile] = useState(false);
   return (
     <div id="section1-container">
      
-      <div id="V22" >
+      {/* <div id="V22" >
         
      <V22 />
-           </div>
+           </div> */}
+
+            <div id="V35" style={{ padding: "50px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
+                  
+                   <br></br>
+                    <br></br>
+                 <V35 />
+               </div> 
 
             
     </div>

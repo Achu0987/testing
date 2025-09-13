@@ -6,6 +6,7 @@ import V9 from "./V9";
 import V10 from "./V10";
 import V13 from "./V13";
 import V17 from "./V17";
+import V28 from "./V28";
 
 
 
@@ -39,15 +40,20 @@ useEffect(() => {
       <V13/>
 
        </div>
-            <div id="V17" style={{ padding: "50px 0" ,textAlign:'center',fontWeight:'bold'}}>
+    <div id="V17" style={{ padding: "50px 0" ,textAlign:'center',fontWeight:'bold'}}>
         <label>Section_1 - V17</label>
         <br></br>
          <br></br>
       <V17/>
-     
-    
+    </div> 
 
-      </div> 
+    <div id="V28" style={{ padding: "50px 0" ,textAlign:'center',fontWeight:'bold'}}>
+        <label>Section_1 - V28</label>
+        <br></br>
+         <br></br>
+      <V28/>
+    </div> 
+
     </div>
   );
 }

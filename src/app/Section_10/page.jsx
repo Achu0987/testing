@@ -2,8 +2,10 @@
 import Image from "next/image";
 import React,{useEffect,useState} from "react";
 
-import V18 from "./V18";
-import V22 from "../Section_11/V22";
+// import V18 from "./V18";
+import V32 from "./V32";
+
+
 
 
 export default function Section_10() {
@@ -45,14 +47,19 @@ const [isMobile, setIsMobile] = useState(false);
 
   return (
     <div id="section1-container">
-     <div id="V18" >
+     {/* <div id="V18" >
         
      <V18/>
-      </div>
-      <div id="V22" >
+      </div> */}
+      
+
+           <div id="V32" >
         
-     <V22 />
+     <V32 />
            </div>
+
+           
+        
 
             
     </div>
