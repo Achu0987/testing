@@ -1,13 +1,13 @@
 "use client"
 import Image from "next/image";
 import React,{useEffect,useState} from "react";
+import V40 from "./V40";
 
 
-// import V22 from "../Section_11/V22";
-import V35 from "./V35";
 
 
-export default function Section_11() {
+
+export default function Section_18() {
   const titleText = "Moon Light";
 useEffect(() => {
     if (typeof window !== "undefined" && window.location.hash) {
@@ -52,11 +52,11 @@ const [isMobile, setIsMobile] = useState(false);
      <V22 />
            </div> */}
 
-            <div id="V35" style={{ padding: "50px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
+            <div id="V40" style={{ padding: "50px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
                   
-                   <br></br>
+                  
                     <br></br>
-                 <V35 />
+                 <V40 />
                </div> 
 
             

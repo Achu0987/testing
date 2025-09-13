@@ -13,6 +13,8 @@ const MENU = [
       { label: 'Section 1', href: '/Section_1' },
       { label: 'Section 10', href: '/Section_10' },
       { label: 'Section 11', href: '/Section_11' },
+      { label: 'Section 17', href: '/Section_17' },
+      { label: 'Section 18', href: '/Section_18' },
 
     
     ],
