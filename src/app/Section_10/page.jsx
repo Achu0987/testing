@@ -3,7 +3,9 @@ import Image from "next/image";
 import React,{useEffect,useState} from "react";
 
 // import V18 from "./V18";
-import V32 from "./V32";
+// import V32 from "./V32";
+import V51 from "./V51";
+import V48 from "./V48"
 
 
 
@@ -50,17 +52,28 @@ const [isMobile, setIsMobile] = useState(false);
      {/* <div id="V18" >
         
      <V18/>
-      </div> */}
+      </div>
       
 
            <div id="V32" >
         
      <V32 />
-           </div>
+           </div> */}
 
            
-        
-
+        <div id="V51" style={{ padding: "40px 0 0 0" , textAlign:'center',fontWeight:'bold'}}>
+                  
+                   <br></br>
+                 
+                 <V51 />
+               </div> 
+               
+                 <div id="V48" style={{ padding: "40px 0 0 0" , textAlign:'center',fontWeight:'bold'}}>
+                  
+                   <br></br>
+                 
+                 <V48 />
+               </div> 
             
     </div>
   );
