@@ -2,8 +2,8 @@
 import Image from "next/image";
 import React,{useEffect,useState} from "react";
 
-// import V18 from "./V18";
-// import V32 from "./V32";
+import V18 from "./V18";
+import V32 from "./V32";
 import V51 from "./V51";
 import V48 from "./V48"
 
@@ -49,7 +49,7 @@ const [isMobile, setIsMobile] = useState(false);
 
   return (
     <div id="section1-container">
-     {/* <div id="V18" >
+     <div id="V18" >
         
      <V18/>
       </div>
@@ -58,7 +58,7 @@ const [isMobile, setIsMobile] = useState(false);
            <div id="V32" >
         
      <V32 />
-           </div> */}
+           </div>
 
            
         <div id="V51" style={{ padding: "40px 0 0 0" , textAlign:'center',fontWeight:'bold'}}>
@@ -69,8 +69,9 @@ const [isMobile, setIsMobile] = useState(false);
                </div> 
                
                  <div id="V48" style={{ padding: "40px 0 0 0" , textAlign:'center',fontWeight:'bold'}}>
-                  
+                
                    <br></br>
+                   
                  
                  <V48 />
                </div> 

@@ -105,12 +105,12 @@ function V51() {
         >
           <div className="grid h-full grid-cols-12 ">
             {/* Left Text Section - Vertically Centered */}
-            <div className="col-span-12 text-left mx-10 h-[95vh] md:col-span-6 lg:col-span-5 flex items-center">
+            <div className="col-span-12  text-left mx-10 h-[100vh] md:col-span-6 lg:col-span-5 flex items-center">
               <div className="flex flex-col justify-center">
                 <h2
                   className="text-white font-semibold"
                   style={{
-                    fontSize: px(active.layout.titleSize),
+                    fontSize: '80px',
                     lineHeight: active.layout.titleLineHeight,
                     letterSpacing: '-0.02em',
                   }}
