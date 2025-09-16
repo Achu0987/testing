@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React,{useEffect,useState} from "react";
 import V39 from "./V39";
+import V40 from "./V40";
 
 
 
@@ -27,6 +28,16 @@ useEffect(() => {
         
       <V39 />
       </div>
+      
+      </div>
+
+        <div id="V40" style={{ padding: "50px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
+     <div >
+        <br />
+        
+      <V40 />
+      </div>
+      
       </div>
    
 
