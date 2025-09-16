@@ -232,10 +232,15 @@ export default function V55() {
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
               <button onClick={() => setPopupOpen(false)} className="w-full sm:flex-1 bg-gray-200 text-gray-800 py-2 rounded-lg font-medium hover:bg-gray-300 transition">Continue Shopping</button>
               <button className="w-full sm:flex-1 bg-black text-white py-2 rounded-lg font-medium hover:bg-gray-800 transition">Go to Cart</button>
+           
+            
             </div>
           </div>
         </div>
+        
+        
       )}
+      
     </div>
   );
 }
