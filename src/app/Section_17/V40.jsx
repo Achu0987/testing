@@ -240,7 +240,7 @@ export default function V40() {
                   <div className="w-full flex-shrink-0 mt-3">
                     <div className="rounded-lg overflow-hidden bg-gray-100 flex items-end justify-center relative">
                       <img
-                        src="https://cdn.prod.website-files.com/68487f7195aeb42041c38e2e/68504d92ac4ff40b9799ff19_Frame%2010.png"
+                        src="https://files-accl.zohoexternal.com/public/workdrive-external/previewdata/3yzih8f10bc93db87473aa241493319620d89?orig=true"
                         alt="Comprehensive Dashboard"
                         loading="lazy"
                         className="inline-block align-middle max-w-[360px] sm:max-w-[420px] w-full h-[160px] sm:h-[200px] md:h-[260px] object-contain image-object"
@@ -337,7 +337,7 @@ export default function V40() {
                     {/* Changed alignment: top-right on larger screens; center on small */}
                     <div className="w-full h-44 sm:h-56 rounded-lg overflow-hidden bg-gray-50 flex items-start sm:items-start justify-center sm:justify-end float-slow card-hover">
                       <img
-                        src="https://cdn.prod.website-files.com/68487f7195aeb42041c38e2e/686f2db75c15745f8dcaa161_685051efe8a2ee61a1dd5b1d_World%20map%20(1).png"
+                        src="https://files-accl.zohoexternal.com/public/workdrive-external/previewdata/3yzihc337628a48134bb9834427647fb63dcc?orig=true"
                         alt="World map"
                         loading="lazy"
                         className="inline-block align-middle max-w-full h-auto object-contain image-object"
