@@ -5,6 +5,7 @@ import React from "react";
  * Custom grid layout applied (8 cols × 6 rows).
  * Image titles shown directly on images (no caption box).
  * Each image now has rounded corners (rounded-lg).
+ * 
  */
 
 export default function V66() {
