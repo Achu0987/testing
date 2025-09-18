@@ -27,17 +27,17 @@ export default function V148() {
       <img
         src="https://gramentheme.com/html/fresheat/assets/img/shape/aboutShape1_1.png"
         alt="shape"
-        className="hidden 2xl:block absolute top-0 left-0"
+        className=" 2xl:block absolute top-0 left-0  w-80 h-100 mt-0"
       />
 
       <img
         src="https://gramentheme.com/html/fresheat/assets/img/shape/aboutShape1_4.png"
         alt="shape"
-        className="hidden 2xl:block absolute bottom-0 right-0"
+        className=" 2xl:block absolute bottom-0 right-0 w-80 h-100 mb-0"
       />
 
       {/* FIRST ROTATING SHAPE (slow) */}
-      <div className="absolute top-40 left-56 w-48 h-48 md:w-72 md:h-72 z-20 flex items-center justify-center">
+      <div className="absolute top-32 left-40 w-50 h-50 md:w-72  z-20 flex items-center justify-center">
         <img
           src="https://gramentheme.com/html/fresheat/assets/img/shape/aboutShape1_3.png"
           alt="rotating shape 1"
@@ -46,7 +46,7 @@ export default function V148() {
       </div>
 
       {/* SECOND ROTATING SHAPE (fast) */}
-      <div className="absolute bottom-40 right-56 w-48 h-48 md:w-72 md:h-72 z-10 flex items-center justify-center">
+      <div className="absolute bottom-15 right-50 w-50 h-50  md:h-72 z-10 flex items-center justify-center">
         <img
           src="https://gramentheme.com/html/fresheat/assets/img/shape/aboutShape1_6.png"
           alt="rotating shape 2"
@@ -75,12 +75,12 @@ export default function V148() {
           </div>
 
           {/* Title */}
-          <h2 className="text-white text-4xl md:text-5xl font-extrabold leading-snug mb-6">
+          <h2 className="text-white text-4xl  font-extrabold leading-snug mb-6">
             Variety Of Flavours From <br /> American Cuisine
           </h2>
 
           {/* Paragraph - adjusted margin */}
-          <p className="text-gray-300 text-lg leading-relaxed mt-4 mb-10 ml-10 mr-10">
+          <p className="text-gray-300 text-base leading-relaxed mt-4 mb-10 ml-35 mr-35">
             It is a long established fact that a reader will be distracted by
             the readable content of a page when looking at its layout.
           </p>
