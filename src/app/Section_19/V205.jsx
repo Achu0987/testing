@@ -84,6 +84,7 @@ function useBuzz() {
   };
 }
 
+// --- Main Component ---
 export default function V205() {
   const [cart, setCart] = useState([]);
   const [selectedWeights, setSelectedWeights] = useState(() =>
@@ -97,13 +98,14 @@ export default function V205() {
   const [activeIndex, setActiveIndex] = useState(0);
   const playBuzz = useBuzz();
 
-  // Remove all cart entries for a product
-  const removeAllEntriesForProduct = (productId) => {
+  // --- New helper: remove all cart entries for a product and close cart ---
+  const removeProductFromCart = (productId) => {
     setCart((prev) => prev.filter((it) => it.productId !== productId));
     playBuzz();
     setIsCartOpen(false);
   };
 
+  // Weight Control
   const changeWeight = (productId, delta) => {
     setSelectedWeights((prev) => {
       const current = prev[productId] || 100;
@@ -115,6 +117,7 @@ export default function V205() {
     });
   };
 
+  // Add to Cart
   const addToCart = (productId) => {
     const weight = selectedWeights[productId] || 100;
     setCart((prev) => {
@@ -129,6 +132,7 @@ export default function V205() {
     setIsCartOpen(true);
   };
 
+  // Cart Operations
   const updateCartItemWeight = (index, newWeight) => {
     setCart((prev) => {
       const clone = [...prev];
@@ -166,6 +170,7 @@ export default function V205() {
         background: "radial-gradient(ellipse,#9A88B6 0%, #ECE7F2 68%)",
       }}
     >
+      {/* Styles */}
       <style>{`
         @keyframes shimmer {
           0% { background-position: -200% 0; }
@@ -189,7 +194,10 @@ export default function V205() {
         <p className="uppercase tracking-wide text-black font-bold text-base">
           SHOP THE LATEST SWEETS
         </p>
-        <h1 className=" text-4xl md:text-6xl font-black mt-2 leading-tight text-center">
+        <h1
+          className=" text-4xl md:text-6xl font-black mt-2 leading-tight text-center"
+          style={{ maxWidth: "900px" }}
+        >
           OUR BESTSELLING TREATS
         </h1>
         <p className="mt-4 text-gray-700 text-lg leading-relaxed max-w-3xl text-center">
@@ -212,14 +220,24 @@ export default function V205() {
                 className="min-w-[320px] max-w-[380px] bg-white/90 rounded-3xl overflow-hidden flex-shrink-0 transition-all duration-400 hover:scale-105 hover:shadow-2xl snap-center relative"
                 style={{ boxShadow: "0 10px 36px rgba(17, 9, 40, 0.10)" }}
               >
-                {/* cancel button inside product card */}
-                <button
-                  onClick={() => removeAllEntriesForProduct(p.id)}
-                  className="absolute top-2 right-2 z-20 text-gray-400 hover:text-red-600 p-1 rounded-full bg-white shadow"
-                  title="Remove this product from cart"
-                >
-                  ✕
-                </button>
+                {/* Cancel button (shows only if this product exists in cart) */}
+                <div className="absolute top-3 right-3 z-20">
+                  {cart.some((it) => it.productId === p.id) && (
+                    <button
+                      onClick={(e) => {
+                        // stop propagation so link / other handlers don't trigger
+                        e.preventDefault();
+                        e.stopPropagation();
+                        removeProductFromCart(p.id);
+                      }}
+                      className="p-2 bg-white/95 rounded-full shadow hover:bg-gray-100"
+                      title="Remove all of this product from cart"
+                      aria-label={`Remove ${p.name} from cart`}
+                    >
+                      ✕
+                    </button>
+                  )}
+                </div>
 
                 <a href={p.href} target="_top" rel="noreferrer" className="block">
                   <div className="bg-gradient-to-b from-purple-50 to-white h-80 flex items-center justify-center relative">
@@ -227,6 +245,7 @@ export default function V205() {
                   </div>
                 </a>
 
+                {/* Tags */}
                 <div className="absolute top-3 left-3 flex flex-wrap gap-2">
                   {p.tags.map((tag) => (
                     <span
@@ -238,6 +257,7 @@ export default function V205() {
                   ))}
                 </div>
 
+                {/* Details */}
                 <div className="p-4 flex flex-col gap-3">
                   <div className="flex items-center justify-between">
                     <p className="font-semibold text-lg truncate">{p.name}</p>
@@ -246,6 +266,7 @@ export default function V205() {
                     </div>
                   </div>
 
+                  {/* Weight */}
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <button
@@ -269,6 +290,7 @@ export default function V205() {
                     </div>
                   </div>
 
+                  {/* Buttons */}
                   <div className="flex gap-3">
                     <button
                       onClick={() => addToCart(p.id)}
@@ -288,6 +310,54 @@ export default function V205() {
             ))}
           </div>
         </div>
+
+        {/* Arrow Controls */}
+        <div className="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-30">
+          <button
+            onClick={() => {
+              const slider = sliderRef.current;
+              if (!slider) return;
+              const idx = Math.max(0, activeIndex - 1);
+              setActiveIndex(idx);
+              slider.children[idx]?.scrollIntoView({ behavior: "smooth", inline: "center" });
+            }}
+            className="icon-btn p-3 rounded-full bg-white/95 text-purple-700 shadow-md"
+            title="Previous"
+          >
+            {/* Left Arrow Icon */}
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <button
+            onClick={() => {
+              const slider = sliderRef.current;
+              if (!slider) return;
+              const idx = Math.min(PRODUCTS.length - 1, activeIndex + 1);
+              setActiveIndex(idx);
+              slider.children[idx]?.scrollIntoView({ behavior: "smooth", inline: "center" });
+            }}
+            className="icon-btn p-3 rounded-full bg-white/95 text-purple-700 shadow-md"
+            title="Next"
+          >
+            {/* Right Arrow Icon */}
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="mt-8">
+        <a href="/shop" target="_top" rel="noreferrer">
+          <button className="bg-purple-800 text-white px-8 py-3 rounded-full border-4 border-purple-800 hover:bg-purple-600">
+            TREAT YOURSELF
+          </button>
+        </a>
       </div>
 
       {/* Cart Panel */}
@@ -314,21 +384,12 @@ export default function V205() {
           {cart.length === 0 && (
             <div className="text-gray-500">Your cart is empty.</div>
           )}
-
           {cart.map((it, idx) => {
             const p = productById(it.productId);
             if (!p) return null;
             const itemPrice = (p.pricePer100g * it.weight) / 100;
             return (
-              <div key={idx} className="flex gap-4 mb-4 items-start relative bg-white rounded p-2 shadow-sm">
-                <button
-                  onClick={() => removeAllEntriesForProduct(it.productId)}
-                  className="absolute top-2 right-2 text-gray-400 hover:text-red-600 p-1 rounded"
-                  title="Remove all entries for this product and close cart"
-                >
-                  ✕
-                </button>
-
+              <div key={idx} className="flex gap-4 mb-4 items-start relative">
                 <img
                   src={p.img}
                   alt={p.name}
@@ -385,10 +446,11 @@ export default function V205() {
                       >
                         +
                       </button>
+                      {/* Cancel/Remove Button */}
                       <button
                         onClick={() => removeCartItem(idx)}
                         className="ml-2 text-gray-400 hover:text-red-600 transition"
-                        title="Remove this line"
+                        title="Remove item"
                       >
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5"
                           fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -424,6 +486,9 @@ export default function V205() {
           </div>
         </div>
       </div>
+
+      {/* Floating Cart Button */}
+     
     </section>
   );
 }
