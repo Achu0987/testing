@@ -85,7 +85,7 @@ function useBuzz() {
 }
 
 // --- Main Component ---
-export default function V205() {
+export default function V206() {
   const [cart, setCart] = useState([]);
   const [selectedWeights, setSelectedWeights] = useState(() =>
     PRODUCTS.reduce((acc, p) => {
