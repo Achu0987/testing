@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 const V217 = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [categoriesOpen, setCategoriesOpen] = useState(false);
+  const [pagesOpen, setPagesOpen] = useState(false);
 
   // sample cart items
   const cartItems = [
@@ -28,6 +29,44 @@ const V217 = () => {
   const itemsCount = cartItems.reduce((s, it) => s + it.qty, 0);
   const subtotal = cartItems.reduce((s, it) => s + it.price * it.qty, 0);
 
+  // timers for smoother dropdown hover
+  const catTimer = useRef(null);
+  const pagesTimer = useRef(null);
+  const CLOSE_DELAY = 150; // ms
+
+  useEffect(() => {
+    return () => {
+      clearTimeout(catTimer.current);
+      clearTimeout(pagesTimer.current);
+    };
+  }, []);
+
+  const openCategories = () => {
+    clearTimeout(catTimer.current);
+    setCategoriesOpen(true);
+  };
+  const closeCategories = () => {
+    clearTimeout(catTimer.current);
+    catTimer.current = setTimeout(() => setCategoriesOpen(false), CLOSE_DELAY);
+  };
+
+  const openPages = () => {
+    clearTimeout(pagesTimer.current);
+    setPagesOpen(true);
+  };
+  const closePages = () => {
+    clearTimeout(pagesTimer.current);
+    pagesTimer.current = setTimeout(() => setPagesOpen(false), CLOSE_DELAY);
+  };
+
+  const navItems = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About Us" },
+    { href: "/shop", label: "Shop" },
+    { href: "/blog", label: "Blog" },
+    { href: "/contact", label: "Contact" },
+  ];
+
   return (
     <header className="sticky top-0 z-50">
       {/* Navbar wrapper */}
@@ -36,9 +75,9 @@ const V217 = () => {
           <div className="flex items-center justify-between py-6 relative">
             {/* Left: Categories */}
             <div
-              className="group relative flex items-center gap-3 cursor-pointer select-none"
-              onMouseEnter={() => setCategoriesOpen(true)}
-              onMouseLeave={() => setCategoriesOpen(false)}
+              className="group relative flex items-center gap-2 cursor-pointer select-none"
+              onMouseEnter={openCategories}
+              onMouseLeave={closeCategories}
             >
               <img
                 src="https://cdn.prod.website-files.com/667337a492e68bf1bbac5bb0/668277f4c7b425e60254a477_category.webp"
@@ -51,13 +90,13 @@ const V217 = () => {
 
               {/* dropdown */}
               <div
-                className={`absolute left-0 mt-3 w-48 bg-black/90 text-white rounded shadow-lg transform transition-all origin-top ${
+                className={`absolute left-0 top-full mt-4 w-60 bg-white text-black text-left rounded shadow-lg transform transition-all origin-top z-50 ${
                   categoriesOpen
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-2 pointer-events-none"
+                    ? "opacity-100 translate-y-0 pointer-events-auto"
+                    : "opacity-0 translate-y-1 pointer-events-none"
                 }`}
               >
-                <ul className="flex flex-col divide-y divide-white/10">
+                <ul className="flex flex-col ">
                   {[
                     "T-Shirts",
                     "Sweater",
@@ -69,7 +108,7 @@ const V217 = () => {
                     <li key={c}>
                       <a
                         href={`/category/${c.toLowerCase().replace(/\s+/g, "-")}`}
-                        className="block px-4 py-2 text-sm text-white hover:text-red-500 transition"
+                        className="block px-4 py-2 text-sm hover:text-red-500 transition"
                       >
                         {c}
                       </a>
@@ -82,73 +121,76 @@ const V217 = () => {
             {/* Center: Nav links */}
             <nav className="absolute left-1/2 transform -translate-x-1/2">
               <ul className="flex gap-10 items-center">
-                <li>
-                  <a
-                    href="/"
-                    className="text-sm text-white hover:text-red-500 font-semibold tracking-wider transition"
-                  >
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/about"
-                    className="text-sm text-white hover:text-red-500 transition"
-                  >
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/shop"
-                    className="text-sm text-white hover:text-red-500 transition"
-                  >
-                    Shop
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/blog"
-                    className="text-sm text-white hover:text-red-500 transition"
-                  >
-                    Blog
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/contact"
-                    className="text-sm text-white hover:text-red-500 transition"
-                  >
-                    Contact
-                  </a>
-                </li>
+                {navItems.map((item) => (
+                  <li key={item.label}>
+                    <a
+                      href={item.href}
+                      className="relative group text-sm text-white font-semibold tracking-wider transition-colors duration-200 hover:text-red-500"
+                    >
+                      {item.label}
+                      <span className="absolute left-0 -bottom-1 h-0.5 w-full bg-red-500 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-200" />
+                    </a>
+                  </li>
+                ))}
 
-                {/* Pages dropdown */}
-                <li className="relative group">
-                  <div className="flex items-center gap-1 text-sm text-white hover:text-red-500 transition cursor-pointer">
-                    Pages
+                {/* Pages dropdown (with professional chevron icon) */}
+                <li
+                  className="relative"
+                  onMouseEnter={openPages}
+                  onMouseLeave={closePages}
+                >
+                  <div className="relative group flex items-center gap-1 text-sm text-white hover:text-red-500 transition cursor-pointer select-none">
+                    <span className="font-semibold">Pages</span>
+                    {/* Chevron Down SVG */}
+                    <svg
+                      className={`w-3 h-3 transition-transform duration-200 ${
+                        pagesOpen ? "rotate-180" : "rotate-0"
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+
+                    {/* underline for Pages label */}
+                    <span className="absolute left-0 -bottom-1 h-0.5 w-full bg-red-500 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-200" />
                   </div>
-                  <div className="absolute left-1/2 -translate-x-1/2 mt-3 w-56 bg-black/90 text-white rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none group-hover:pointer-events-auto">
-                    <div className="p-3 grid grid-cols-2 gap-2">
-                      <a
-                        href="/faq"
-                        className="text-sm hover:text-red-500 transition"
-                      >
-                        FAQ
-                      </a>
-                      <a
-                        href="/privacy-policy"
-                        className="text-sm hover:text-red-500 transition"
-                      >
-                        Privacy Policy
-                      </a>
-                      <a
-                        href="/sign-up"
-                        className="text-sm hover:text-red-500 transition"
-                      >
-                        Sign Up
-                      </a>
-                    </div>
+
+                  <div
+                    className={`absolute left-0 top-full mt-4 w-56 bg-white text-black text-left rounded shadow-lg transform transition-all origin-top z-50 ${
+                      pagesOpen
+                        ? "opacity-100 translate-y-0 pointer-events-auto"
+                        : "opacity-0 translate-y-1 pointer-events-none"
+                    }`}
+                  >
+                    <ul className="flex flex-col p-2">
+                      <li>
+                        <a
+                          href="/faq"
+                          className="block px-4 py-2 text-sm hover:text-red-500 transition"
+                        >
+                          FAQ
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/privacy-policy"
+                          className="block px-4 py-2 text-sm hover:text-red-500 transition"
+                        >
+                          Privacy Policy
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/sign-up"
+                          className="block px-4 py-2 text-sm hover:text-red-500 transition"
+                        >
+                          Sign Up
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </li>
               </ul>
