@@ -6,6 +6,9 @@ import V204 from "./V204"
 import V213 from "./V213";
 import V212 from "./V212";
 
+import V228 from "./V228";
+import V229 from "./V229";
+
 
 
 export default function Section_19() {
@@ -49,8 +52,18 @@ useEffect(() => {
       </div>
        
      
+         <div id="V229" style={{ padding: "70px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
+        <label>Section_19 - V229</label>
+         
+      <V229/>
+      </div>
        
        
+        <div id="V228" style={{ padding: "70px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
+        <label>Section_19 - V228</label>
+         
+      <V228/>
+      </div>
 
     </div>
   );
