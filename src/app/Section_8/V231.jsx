@@ -89,7 +89,7 @@ export default function V231() {
       <div className="absolute inset-0 bg-black/40 z-10" />
 
       {/* marquee overlay near top (like the shopify example) */}
-      <div className="absolute top-118 left-0 right-0 z-20 pointer-events-none">
+      <div className="absolute top-125 left-0 right-0 z-20 pointer-events-none">
         <div className="max-w-full px-6">
           <Marquee
             text="ELEGANCE • STYLE • LUXURY • FOREVER •"
