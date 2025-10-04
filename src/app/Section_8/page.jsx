@@ -33,14 +33,14 @@ useEffect(() => {
     <div id="section1-container">
 
    
-{/* 
+
 <div id="V58" style={{ padding: "200px 0 50px 0" ,textAlign:'center',fontWeight:'bold'}}>
         <label>Section_8 - V58</label>
       <V58 />
-       </div> */}
+       </div>
 
 
-     {/* <div id="V140" style={{ padding: "70px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
+     <div id="V140" style={{ padding: "70px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
         <label>Section_8 - V140</label>
          
       <V140 />
@@ -54,8 +54,8 @@ useEffect(() => {
 
       <br />
     
-      </div> */}
-{/* 
+      </div>
+
       <div id="V189" style={{ padding: "100px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
         <label>Section_8 - V189</label>
       <V189 />
@@ -79,7 +79,7 @@ useEffect(() => {
         <label>Section_8 - V57</label>
       <V57/>
        
-   </div> */}
+   </div>
 
    <div id="V231" style={{ padding: "100px 0 50px 0" ,textAlign:'center',fontWeight:'bold'}}>
         <label>Section_8 - V231</label>
