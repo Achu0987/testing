@@ -26,6 +26,7 @@ const MENU = [
       { label: 'Section 19', href: '/Section_19' },
       { label: 'Section 53', href: '/Section_53' },
       { label: 'Section 14', href: '/Section_14' },
+      { label: 'Section 56', href: '/Section_56' },
 
     
     ],
