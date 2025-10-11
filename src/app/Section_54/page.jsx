@@ -3,6 +3,7 @@ import Image from "next/image";
 import React,{useEffect,useState} from "react";
 
 import V263 from "./V263";
+import V262 from "./V262";
 
 
  
@@ -27,7 +28,11 @@ useEffect(() => {
       <V263 />
       </div>
 
-
+<div id="V262" style={{ padding: "70px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
+        <label>Section_54 - V262</label>
+         
+      <V262 />
+      </div>
      
 
       </div>

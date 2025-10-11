@@ -3,6 +3,7 @@ import Image from "next/image";
 import React,{useEffect,useState} from "react";
 
 import V239 from "./V239";
+import V275 from "./V275";
 
 
 export default function Section_11() {
@@ -49,10 +50,12 @@ const [isMobile, setIsMobile] = useState(false);
                
                       <div id="V239" style={{ padding: "70px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
                        <label>Section_14 - V239</label>
-                        
-                    
-               
-                     <V239 />
+                        <V239 />
+                     </div>
+
+                     <div id="V275" style={{ padding: "70px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
+                       <label>Section_14 - V275</label>
+                        <V275/>
                      </div>
             
     </div>

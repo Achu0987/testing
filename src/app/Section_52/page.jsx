@@ -3,6 +3,8 @@ import Image from "next/image";
 import React,{useEffect,useState} from "react";
 import V148 from "./V148";
 import V147 from "./V147";
+import V269 from "./V269";
+import V268 from "./V268";
 
 
 
@@ -70,8 +72,20 @@ const [isMobile, setIsMobile] = useState(false);
                  <br />
                </div> 
 
-                 
-            
+
+                 <div id="V269" style={{ padding: "100px 0 0",textAlign:'center',fontWeight:'bold'}}>
+                    <label>Section_52 - V269</label>
+                   <br></br>
+                   
+                 <V269 />
+               </div>  
+               
+                <div id="V268" style={{ padding: "100px 0 0",textAlign:'center',fontWeight:'bold'}}>
+                    <label>Section_52 - V268</label>
+                   <br></br>
+                   
+                 <V268/>
+               </div>
     </div>
   );
 }
