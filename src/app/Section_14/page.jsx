@@ -4,6 +4,7 @@ import React,{useEffect,useState} from "react";
 
 import V239 from "./V239";
 import V275 from "./V275";
+import V274 from "./V274";
 
 
 export default function Section_11() {
@@ -58,6 +59,11 @@ const [isMobile, setIsMobile] = useState(false);
                         <V275/>
                      </div>
             
+
+             <div id="V274" style={{ padding: "70px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
+                       <label>Section_14 - V274</label>
+                        <V274/>
+                     </div>
     </div>
   );
 }

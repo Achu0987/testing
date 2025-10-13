@@ -9,6 +9,7 @@ import V212 from "./V212";
 import V228 from "./V228";
 import V229 from "./V229";
 import V273 from "./V273";
+import V272 from "./V272";
 
 
 
@@ -25,7 +26,7 @@ useEffect(() => {
   }, []);
   return (
     <div id="section15-container">
-     <div id="V205" style={{ padding: "70px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
+     {/* <div id="V205" style={{ padding: "70px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
         <label>Section_19 - V205</label>
          
       <V205 />
@@ -70,6 +71,12 @@ useEffect(() => {
         <label>Section_19 - V273</label>
          
       <V273/>
+      </div> */}
+
+      <div id="V272" style={{ padding: "70px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
+        <label>Section_19 - V272</label>
+         
+      <V272/>
       </div>
 
     </div>
