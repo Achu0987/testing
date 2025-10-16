@@ -5,6 +5,8 @@ import V148 from "./V148";
 import V147 from "./V147";
 import V269 from "./V269";
 import V268 from "./V268";
+import V295 from "./V295";
+import V294 from "./V294";
 
 
 
@@ -85,6 +87,20 @@ const [isMobile, setIsMobile] = useState(false);
                    <br></br>
                    
                  <V268/>
+               </div>
+
+                <div id="V295" style={{ padding: "100px 0 0",textAlign:'center',fontWeight:'bold'}}>
+                    <label>Section_52 - V295</label>
+                   <br></br>
+                   
+                 <V295/>
+               </div>
+
+               <div id="V294" style={{ padding: "100px 0 0",textAlign:'center',fontWeight:'bold'}}>
+                    <label>Section_52 - V294</label>
+                   <br></br>
+                   
+                 <V294/>
                </div>
     </div>
   );

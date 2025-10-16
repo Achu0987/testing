@@ -10,6 +10,8 @@ import V228 from "./V228";
 import V229 from "./V229";
 import V273 from "./V273";
 import V272 from "./V272";
+import V291 from "./V291";
+import V290 from "./V290";
 
 
 
@@ -26,7 +28,7 @@ useEffect(() => {
   }, []);
   return (
     <div id="section15-container">
-     {/* <div id="V205" style={{ padding: "70px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
+     <div id="V205" style={{ padding: "70px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
         <label>Section_19 - V205</label>
          
       <V205 />
@@ -71,12 +73,24 @@ useEffect(() => {
         <label>Section_19 - V273</label>
          
       <V273/>
-      </div> */}
+      </div>
 
       <div id="V272" style={{ padding: "70px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
         <label>Section_19 - V272</label>
          
       <V272/>
+      </div>
+
+      <div id="V291" style={{ padding: "70px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
+        <label>Section_19 - V291</label>
+         
+      <V291/>
+      </div>
+
+       <div id="V290" style={{ padding: "70px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
+        <label>Section_19 - V290</label>
+         
+      <V290/>
       </div>
 
     </div>
