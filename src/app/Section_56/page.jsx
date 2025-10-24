@@ -10,21 +10,14 @@ import V313 from "./V313";
 import V314 from "./V314";
 import V323 from "./V323";
 import V322 from "./V322";
+import V335 from "./V335";
+import V336 from "./V336";
 
 
  
 
 export default function Section_56() {
-  const titleText = "Moon Light";
-useEffect(() => {
-    if (typeof window !== "undefined" && window.location.hash) {
-      const id = window.location.hash.replace("#", "");
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  }, []);
+  
   return (
     <div id="section1-container">
 <div id="V255" style={{ padding: "70px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
@@ -76,6 +69,20 @@ useEffect(() => {
         <label>Section_56 - V322</label>
 
      <V322/>
+      </div>
+
+
+      <div id="V335" style={{ padding: "70px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
+        <label>Section_56 - V335</label>
+
+     <V335/>
+      </div>
+
+      
+      <div id="V336" style={{ padding: "70px 0 0 0" ,textAlign:'center',fontWeight:'bold'}}>
+        <label>Section_56 - V336</label>
+
+     <V336/>
       </div>
 
       </div>

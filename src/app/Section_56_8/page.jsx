@@ -39,7 +39,7 @@ class Particle {
     context.closePath();
   }
 }
-const BubbleCursor = ({ wrapperElement }) => {
+const Section_56_8 = ({ wrapperElement }) => {
   const canvasRef = useRef(null);
   const particlesRef = useRef([]);
   const cursorRef = useRef({ x: 0, y: 0 });
@@ -159,4 +159,4 @@ const BubbleCursor = ({ wrapperElement }) => {
   }, [wrapperElement]);
   return <canvas ref={canvasRef} />;
 };
-export default BubbleCursor;
+export default Section_56_8;

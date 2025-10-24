@@ -2,7 +2,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, useAnimation } from 'motion/react';
 import './NeonCursor.css';
-const NeonCursor = () => {
+const Section_56_6 = () => {
   const [position, setPosition] = useState({
     x: 0,
     y: 0,
@@ -115,4 +115,4 @@ const NeonCursor = () => {
     </div>
   );
 };
-export default NeonCursor;
+export default Section_56_6;

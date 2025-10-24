@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef } from 'react';
-const TrailingCursor = ({
+const Section_56_7 = ({
   element,
   particles = 15,
   rate = 0.4,
@@ -111,4 +111,4 @@ const TrailingCursor = ({
   }, [element, particles, rate, baseImageSrc]);
   return null;
 };
-export default TrailingCursor;
+export default Section_56_7;

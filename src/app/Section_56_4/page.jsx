@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useMouse } from './useMouse';
 
-const GradientCursor = () => {
+const Section_56_4 = () => {
   const [mouseState, ref] = useMouse();
   const [hue, setHue] = useState(0);
   const [particles, setParticles] = useState([]);
@@ -87,4 +87,4 @@ const GradientCursor = () => {
     </div>
   );
 };
-export default GradientCursor;
+export default Section_56_4;

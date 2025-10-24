@@ -1,7 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 import V315 from './V315';
-const page = () => {
+const Section_56_1 = () => {
   useEffect(() => {
     V315();
   }, []);
@@ -11,4 +11,4 @@ const page = () => {
     </div>
   );
 };
-export default page;
+export default Section_56_1;
