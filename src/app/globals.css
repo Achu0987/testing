@@ -1,2 +1,9 @@
 @import "tailwindcss";
+:root {
+  --cookie-monster-blue: #0062AD;
+  --cream-background: #FBF1E3;
+}
+
+/* optional minimal resets to make layout consistent */
+html, body, #__next { height: 100%; margin: 0; }
 

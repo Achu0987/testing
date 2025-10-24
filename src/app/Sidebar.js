@@ -14,7 +14,6 @@ const MENU = [
       { label: 'Section 10', href: '/Section_10' },
       { label: 'Section 11', href: '/Section_11' },
       { label: 'Section 17', href: '/Section_17' },
-      { label: 'Section 18', href: '/Section_18' },
       { label: 'Section 30', href: '/Section_30' },
       { label: 'Section 25', href: '/Section_25' },
       { label: 'Section 20', href: '/Section_20' },
@@ -28,6 +27,9 @@ const MENU = [
       { label: 'Section 14', href: '/Section_14' },
       { label: 'Section 56', href: '/Section_56' },
       { label: 'Section 54', href: '/Section_54' },
+    
+      
+      
 
     
     ],
@@ -37,6 +39,25 @@ const MENU = [
     href: '',
     submenu: [
       { label: 'Section 11', href: '/Section_12' },
+      { label: 'Section 57', href: '/Section_57' },
+      { label: 'Section 58', href: '/Section_58' },
+      { label: 'Section 59', href: '/Section_59' },
+      { label: 'Section 60', href: '/Section_60' },
+      { label: 'Section 61', href: '/Section_61' },
+      { label: 'Section 62', href: '/Section_62' },
+      { label: 'Section 64', href: '/Section_64' },
+      { label: 'Section 65', href: '/Section_65' },
+     { label: 'Section 67', href: '/Section_67' },
+     { label: 'Section 68', href: '/Section_68' },
+    ],
+  },
+
+  {
+    label: 'Section 30-50',
+    href: '',
+    submenu: [
+      { label: 'Section 10', href: '/Section_10' },
+    
     ],
   },
 ];
