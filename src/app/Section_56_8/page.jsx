@@ -144,8 +144,8 @@ const Section_56_8 = ({ wrapperElement }) => {
     };
     init();
     return () => {
-      if (canvas) {
-        canvas.remove();
+      if (canvas && canvas.parentNode && canvas.parentNode.contains(canvas)) {
+        canvas.parentNode.removeChild(canvas);
       }
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);

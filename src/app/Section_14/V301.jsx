@@ -220,6 +220,7 @@ export default function V301() {
               <span>made by mr boost</span>
             </motion.div>
           </motion.div>
+          
 
           {/* Soft Right Curve Accent */}
           <motion.div
