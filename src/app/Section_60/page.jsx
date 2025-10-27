@@ -2,13 +2,21 @@ import { SliceZone } from "@prismicio/react";
 import * as prismic from "@prismicio/client";
 import { createClient } from "../../prismicio";
 import { components } from "../../slices";
+import localFont from "next/font/local";
+import { PrismicPreview } from "@prismicio/next";
+import { repositoryName } from "../../prismicio";
+import Header from "../../components/Header";
+import ViewCanvas from "../../components/ViewCanvas";
+import Footer from "../../components/Footer";
 
-// This component renders your homepage.
-//
-// Use Next's generateMetadata function to render page metadata.
-//
-// Use the SliceZone to render the content of the page.
+const alpino = localFont({
+  src: "../../../public/fonts/Alpino-Variable.woff2",
+  display: "swap",
+  weight: "100 900",
+  variable: "--font-alpino"
+});
 
+// This component renders the Fizzi homepage content inside the testing app
 export async function generateMetadata() {
   const client = createClient();
   const home = await client.getByUID("page", "home");
@@ -23,9 +31,18 @@ export async function generateMetadata() {
     }
   };
 }
+
 export default async function Section_60() {
   // The client queries content from the Prismic API
   const client = createClient();
   const home = await client.getByUID("page", "home");
-  return <SliceZone slices={home.data.slices} components={components} />;
+  return <div className={alpino.variable + " bg-yellow-300 overflow-x-hidden"}>
+      <Header />
+      <main>
+        <SliceZone slices={home.data.slices} components={components} />
+        <ViewCanvas />
+      </main>
+      <Footer />
+      <PrismicPreview repositoryName={repositoryName} />
+    </div>;
 }
