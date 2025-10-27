@@ -48,6 +48,7 @@ const MENU = [
       { label: 'Section_56_7', href: '/Section_56_7' },
       { label: 'Section_56_8', href: '/Section_56_8' },
       { label: 'Section_59', href: '/Section_59' },
+      { label: 'Section_60', href: '/Section_60' },
     
     ],
   },
