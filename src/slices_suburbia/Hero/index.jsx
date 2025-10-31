@@ -74,7 +74,7 @@ const Hero = ({ slice }) => {
             <Link href="/team" className="hover:text-brand-purple">
               Team
             </Link>
-            <Link href="/customizer" className="hover:text-brand-purple">
+            <Link href="/build" className="hover:text-brand-purple">
               Customizer
             </Link>
             <Link href="/about" className="hover:text-brand-purple">
@@ -134,7 +134,7 @@ const Hero = ({ slice }) => {
         {/* CTA Button */}
         <div className="self-end">
           <RibbonButton
-            href="/customizer"
+            href="/build"
             text="Build Your Board"
             bg="#ff7f45"
             icon={
