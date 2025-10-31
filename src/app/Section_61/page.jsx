@@ -1,13 +1,13 @@
 import { SliceZone } from "@prismicio/react";
 import * as prismic from "@prismicio/client";
 import { createClient } from "../../prismicio";
-import { components } from "../../slices";
+import { components } from "./slices";
 import localFont from "next/font/local";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "../../prismicio";
-import Header from "../../components/Header";
-import ViewCanvas from "../../components/ViewCanvas";
-import Footer from "../../components/Footer";
+import Header from "./component/Header";
+import ViewCanvas from "./component/ViewCanvas";
+import Footer from "./component/Footer";
 
 const alpino = localFont({
   src: "../../../public/fonts/Alpino-Variable.woff2",

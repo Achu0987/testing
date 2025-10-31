@@ -1,6 +1,6 @@
 "use client";
 
-import { Heading } from "../Section_62/component/Heading";
+import { Heading } from "../Heading";
 import {
   ColorField,
   Content,

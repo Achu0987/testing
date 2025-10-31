@@ -1,8 +1,8 @@
 import { SliceZone } from "@prismicio/react";
 
 import { createClient } from "@prismicio/client";
-import { components } from "@/slices_suburbia";
-import { Footer } from "@/components/suburbia/Footer";
+import { components } from "./slices";
+import { Footer } from "./component/Footer";
 
 const client = createClient("suburbia", {
   routes: [{
@@ -25,7 +25,7 @@ export default async function Page() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Section 61</h1>
+          <h1 className="text-2xl font-bold mb-4">Section 62</h1>
           <p className="text-gray-600">Unable to load content from Prismic. Please check your connection and repository access.</p>
           <p className="text-sm text-gray-500 mt-2">Error: {error.message}</p>
         </div>

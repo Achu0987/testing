@@ -1,6 +1,6 @@
 "use client";
 
-import { Logo } from "../Section_62/component/Logo";
+import { Logo } from "../Logo";
 import { useProgress } from "@react-three/drei";
 import clsx from "clsx";
 

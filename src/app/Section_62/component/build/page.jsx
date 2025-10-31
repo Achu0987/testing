@@ -1,11 +1,11 @@
-import { ButtonLink } from "../Section_62/component/ButtonLink";
-import { Heading } from "../Section_62/component/Heading";
-import { Logo } from "../Section_62/component/Logo";
+import { ButtonLink } from "../ButtonLink";
+import { Heading } from "../Heading";
+import { Logo } from "../Logo";
 import Link from "next/link";
 import React from "react";
 
 import { CustomizerControlsProvider } from "./context";
-import * as prismic from "@prismicio/client";
+import { createClient } from "@/prismicio";
 import Preview from "./Preview";
 import { asImageSrc } from "@prismicio/client";
 import Controls from "./Controls";
@@ -14,12 +14,7 @@ import Loading from "./Loading";
 export default async function Page(props) {
   const searchParams = await props.searchParams;
 
-  const client = prismic.createClient("suburbia", {
-    fetchOptions:
-      process.env.NODE_ENV === "production"
-        ? { next: { tags: ["prismic"] }, cache: "force-cache" }
-        : { next: { revalidate: 5 } },
-  });
+  const client = createClient();
   const customizerSettings = await client.getSingle("board_customizer");
   const { wheels, decks, metals } = customizerSettings.data;
 

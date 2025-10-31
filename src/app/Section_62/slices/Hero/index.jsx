@@ -1,10 +1,10 @@
 import { asImageSrc } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
 import Link from "next/link";
-import { Logo } from "../../app/Section_62/component/Logo";
+import { Logo } from "@/app/Section_62/component/Logo";
 import { WideLogo } from "./WideLogo";
 import { InteractiveSkateboard } from "./InteractiveSkateboard";
-import { Bounded } from "../../app/Section_62/component/Bounded";
+import { Bounded } from "@/app/Section_62/component/Bounded";
 
 const DEFAULT_DECK_TEXTURE = "/skateboard/Deck.webp";
 const DEFAULT_WHEEL_TEXTURE = "/skateboard/SkateWheel1.png";
