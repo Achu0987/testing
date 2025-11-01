@@ -227,7 +227,7 @@ export default function V342() {
 
       const loader = new GLTFLoader(manager);
       loader.load(
-        "https://files-accl.zohoexternal.com/public/workdrive-external/previewdata/vovvw36115a5e19a24893b8d3cc5f232175ec?orig=true",
+        "https://files-accl.zohoexternal.com/public/workdrive-external/previewdata/vovvwa5a60810c9734c6d9f1689a07710ce60?orig=true",
         function (gltf) {
           modelObject = gltf.scene;
           // if manager already finished (maybe), call onModelLoaded
